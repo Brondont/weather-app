@@ -4,29 +4,32 @@ import "../App.css";
 const InputField = ({
   displayWeather,
 }: {
-  displayWeather: (countryName: string) => void;
+  displayWeather: (cityName: string) => void;
 }) => {
-  const [country, setCountry] = useState<string>("");
+  const [city, setCity] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    displayWeather(country);
+
+    displayWeather(city);
   };
 
   return (
     <form className="inputForm" onSubmit={handleSubmit}>
-      <input
-        type="input"
-        value={country}
-        onChange={(e) => {
-          setCountry(e.target.value);
-        }}
-        placeholder="Enter city name ..."
-        className="inputBox"
-      />
-      <button className="inputButton" type="submit">
-        Search
-      </button>
+      <fieldset>
+        <input
+          type="input"
+          value={city}
+          onChange={(e) => {
+            setCity(e.target.value);
+          }}
+          placeholder="Enter a city's name.."
+          className="inputBox"
+        />
+        <button className="inputButton" type="submit">
+          Search
+        </button>
+      </fieldset>
     </form>
   );
 };

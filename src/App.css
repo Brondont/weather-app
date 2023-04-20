@@ -1,5 +1,14 @@
+.App {
+  background-color: #7fbfff;
+  height: 481px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .WeatherUi {
-  background-color: #ff0077;
+  background-color: #cc9cff;
+  border-radius: 5px;
   width: 300px;
   height: fit-content;
   justify-content: center;
@@ -7,33 +16,52 @@
   color: white;
 }
 
-.App {
-  background-color: palevioletred;
-  height: 481px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .inputForm {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 30px;
+  border-radius: 25px;
 }
 
 .inputButton {
   border: 0px;
+  font-weight: bold;
+  border-radius: 2px;
+  background-color: white;
 }
 
 .inputButton:hover {
-  background: #901d52;
+  background: #7fbfff;
   color: white;
   cursor: pointer;
 }
 
 .inputBox {
+  font-weight: bold;
+  font-size: 20px;
+  width: 200px;
+}
+
+.inputBox::placeholder {
+  display: flex;
+  font-size: 10px;
+}
+
+.inputBox:focus {
+  outline: 0px;
+}
+
+.inputBox:placeholder-shown {
   border: 0px;
+  border-radius: 2px;
+}
+
+.inputBox:not(:placeholder-shown) {
+  background-color: transparent;
+  border: 0px;
+  border-radius: 2px;
+  color: white;
 }
 
 .Weather {
@@ -53,9 +81,13 @@
 }
 
 .Main {
+  margin: 10px;
+}
+
+.weatherMain {
   margin: 30px;
 }
-.SubMain {
+.weatherSubMain {
   display: grid;
   grid-template-columns: repeat(2, auto);
 }
@@ -75,4 +107,10 @@
   width: 50px;
   height: 40px;
   margin: 5px;
+}
+
+form fieldset {
+  border: 0px;
+  display: flex;
+  justify-content: space-between;
 }
