@@ -51,7 +51,7 @@ const WeatherStatus = ({
         {weatherImage === "not found" ? (
           <div className="notFound">
             <img src={Search} alt="/" /> <br></br>
-            Country not found !
+            City not found !
           </div>
         ) : (
           <img className="weatherImage" src={weatherImage} alt="/" />

@@ -37,13 +37,21 @@ const Weather: React.FC = () => {
     setHumidity(weatherData.main.humidity);
   };
 
+  const resetData = (): void => {
+    setWeatherType("");
+    setTemperature(0);
+    setWind(0);
+    setHumidity(0);
+    setDesc("");
+  };
+
   const displayWeather = (cityName: string): void => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=13590d082f5966309f71629b0aab7ee0`;
     axios
       .get(url)
       .then((info) => deconstructData(info.data))
-      .catch(function (error) {
-        console.log(error.toJSON());
+      .catch(() => {
+        resetData();
       });
   };
 
